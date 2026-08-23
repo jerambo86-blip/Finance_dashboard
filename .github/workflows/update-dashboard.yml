@@ -1,1 +1,37 @@
+name: Update ETF Dashboard
 
+on:
+  schedule:
+    # Runs at 00:00 UTC on the 1st and 15th of every month (~every 2 weeks).
+    # Edit this cron expression if you want a different cadence.
+    - cron: "0 0 1,15 * *"
+  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write   # needed so the workflow can commit the updated dashboard
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch data and build dashboard
+        run: python scripts/fetch_and_render.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html data/history.json
+          git diff --staged --quiet || git commit -m "Auto-update ETF dashboard $(date -u +'%Y-%m-%d')"
+          git push
