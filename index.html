@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ETF 대시보드</title>
+<style>
+:root {
+  --bg: #0B0F14;
+  --card: #121821;
+  --border: #232C38;
+  --text: #E7ECF1;
+  --muted: #8592A0;
+  --up: #34D399;
+  --down: #FB7185;
+  --accent: #E8B54D;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", Inter, sans-serif;
+  padding: 40px 24px 64px;
+}
+.wrap { max-width: 880px; margin: 0 auto; }
+h1 { font-size: 28px; font-weight: 700; margin: 0 0 4px; letter-spacing: -0.5px; }
+.updated {
+  display: inline-block;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  color: #0B0F14;
+  background: var(--accent);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  margin: 12px 0 32px;
+}
+h2 { font-size: 17px; font-weight: 600; margin: 40px 0 14px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.symbol { font-family: "Courier New", monospace; font-size: 14px; font-weight: 700; }
+.name { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.price { font-family: "Courier New", monospace; font-size: 22px; font-weight: 700; margin-top: 10px; }
+.change { font-family: "Courier New", monospace; font-size: 13px; margin-top: 4px; }
+.up { color: var(--up); }
+.down { color: var(--down); }
+.na { color: var(--muted); font-size: 12px; }
+footer { color: #4A5563; font-size: 11px; margin-top: 48px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ETF 대시보드</h1>
+  <div class="updated">UPDATED · 2026-08-23 04:10:58 UTC</div>
+
+  <h2>🇺🇸 미국 ETF TOP 10</h2>
+  <div class="grid">
+    <div class="card"><div class="symbol">VOO</div><div class="name">S&P500 (미국 대형주)</div><div class="price">$703.71</div><div class="change up">▲ 0.36%</div></div>
+<div class="card"><div class="symbol">QQQ</div><div class="name">나스닥100 (기술주)</div><div class="price">$713.44</div><div class="change up">▲ 0.37%</div></div>
+<div class="card"><div class="symbol">VTI</div><div class="name">미국 전체시장</div><div class="price">$378.24</div><div class="change up">▲ 0.33%</div></div>
+<div class="card"><div class="symbol">VUG</div><div class="name">미국 성장주</div><div class="price">$87.50</div><div class="change up">▲ 0.17%</div></div>
+<div class="card"><div class="symbol">VTV</div><div class="name">미국 가치주</div><div class="price">$226.40</div><div class="change up">▲ 0.62%</div></div>
+<div class="card"><div class="symbol">IWM</div><div class="name">미국 소형주</div><div class="price">$299.96</div><div class="change up">▲ 0.72%</div></div>
+<div class="card"><div class="symbol">BND</div><div class="name">미국 채권</div><div class="price">$72.23</div><div class="change down">▼ 0.22%</div></div>
+<div class="card"><div class="symbol">GLD</div><div class="name">금</div><div class="price">$423.36</div><div class="change up">▲ 1.98%</div></div>
+<div class="card"><div class="symbol">VXUS</div><div class="name">해외 전체주식</div><div class="price">$87.71</div><div class="change up">▲ 0.63%</div></div>
+<div class="card"><div class="symbol">VNQ</div><div class="name">리츠(부동산)</div><div class="price">$98.50</div><div class="change down">▼ 0.33%</div></div>
+  </div>
+
+  <h2>🇰🇷 한국 ETF TOP 10</h2>
+  <div class="grid">
+    <div class="card"><div class="symbol">069500.KS</div><div class="name">KODEX 200</div><div class="price">₩109,980.00</div><div class="change up">▲ 1.65%</div></div>
+<div class="card"><div class="symbol">102110.KS</div><div class="name">TIGER 200</div><div class="price">₩110,225.00</div><div class="change up">▲ 1.65%</div></div>
+<div class="card"><div class="symbol">122630.KS</div><div class="name">KODEX 레버리지</div><div class="price">₩112,240.00</div><div class="change up">▲ 3.25%</div></div>
+<div class="card"><div class="symbol">252670.KS</div><div class="name">KODEX 200선물인버스2X</div><div class="price">₩74.00</div><div class="change down">▼ 2.63%</div></div>
+<div class="card"><div class="symbol">292150.KS</div><div class="name">TIGER TOP10</div><div class="price">₩38,615.00</div><div class="change up">▲ 1.93%</div></div>
+<div class="card"><div class="symbol">229200.KS</div><div class="name">KODEX 코스닥150</div><div class="price">₩13,810.00</div><div class="change down">▼ 5.51%</div></div>
+<div class="card"><div class="symbol">379800.KS</div><div class="name">KODEX 미국S&P500</div><div class="price">₩23,910.00</div><div class="change down">▼ 1.40%</div></div>
+<div class="card"><div class="symbol">133690.KS</div><div class="name">TIGER 미국나스닥100</div><div class="price">₩179,715.00</div><div class="change down">▼ 1.36%</div></div>
+<div class="card"><div class="symbol">132030.KS</div><div class="name">KODEX 골드선물(H)</div><div class="price">₩25,595.00</div><div class="change up">▲ 1.33%</div></div>
+<div class="card"><div class="symbol">153130.KS</div><div class="name">KODEX 단기채권</div><div class="price">₩113,215.00</div><div class="change up">▲ 0.00%</div></div>
+  </div>
+
+  <footer>2주(격주) 간격으로 GitHub Actions가 자동 갱신합니다. 데이터 출처: Yahoo Finance (yfinance).</footer>
+</div>
+</body>
+</html>
